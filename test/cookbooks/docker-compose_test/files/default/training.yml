@@ -1,0 +1,6 @@
+child:
+  image: training/webapp
+  links:
+   - master
+master:
+  image: training/webapp
