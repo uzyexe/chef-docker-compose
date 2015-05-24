@@ -8,7 +8,6 @@
 #
 
 include_recipe 'docker'
-include_recipe 'python'
 
 directory 'compose.d' do
   path  node['docker-compose']['config_directory']
@@ -17,6 +16,10 @@ directory 'compose.d' do
   group 'root'
 end
 
-python_pip 'docker-compose' do
-  package_name(node['docker-compose']['git_url']) if node['docker-compose']['git_url']
+bash "Install docker-compose" do
+  code <<-EOH
+  curl -L https://github.com/docker/compose/releases/download/#{node['docker-compose']['version']}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+  chmod +x /usr/local/bin/docker-compose
+EOH
+  not_if "docker-compose --version | grep -w 'docker-compose #{node['docker-compose']['version']}'"
 end
