@@ -3,8 +3,8 @@ Requirements
 
 The cookbook should run on any Linux flavor and it depends on the following cookbooks:
 
- - [docker cookbook (dennybaa/chef-docker)](https://github.com/dennybaa/chef-docker)
- - opscode python cookbook
+ - [docker cookbook (chef-cookbooks/docker)](https://github.com/chef-cookbooks/docker)
+ - python cookbook
 
 Attributes
 ----------
