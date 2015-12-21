@@ -17,6 +17,8 @@ directory 'compose.d' do
   group 'root'
 end
 
+package 'curl'
+
 bash "Install docker-compose" do
   code <<-EOH
   curl -L https://github.com/docker/compose/releases/download/#{node['docker-compose']['version']}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
