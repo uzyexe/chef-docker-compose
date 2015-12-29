@@ -21,7 +21,7 @@ package 'curl'
 
 bash "Install docker-compose" do
   code <<-EOH
-  curl -L https://github.com/docker/compose/releases/download/#{node['docker-compose']['version']}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+  curl -L #{node['docker-compose']['base_url']}/#{node['docker-compose']['version']}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
   chmod +x /usr/local/bin/docker-compose
 EOH
   not_if "docker-compose --version | grep -w 'docker-compose version: #{node['docker-compose']['version']}'"
