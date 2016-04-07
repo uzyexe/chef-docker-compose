@@ -32,7 +32,7 @@ def environment_file
       components = [ run_context.node['docker-compose']['config_directory'], '' ]
       components << "#{project}_" if project != 'default'
       path = ::File.join(*components) << new_resource.application
-      update_environment_file(path) 
+      update_environment_file(path)
     end
 
     path
