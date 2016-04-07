@@ -136,4 +136,4 @@ Contributing
 
 License and Authors
 -------------------
-Authors: Denis Barishev (<denis.barishev@gmail.com>)
+Authors: Shuji Yamada (<uzy.exe@gmail.com>)
