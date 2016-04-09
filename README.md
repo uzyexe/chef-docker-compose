@@ -101,13 +101,13 @@ Usage
 ## Invocation
 
 ```ruby
-docker-compose 'training-webapp' do
+docker_compose 'training-webapp' do
   action :up
   source 'training.yml'
 end
 
 # one-off command example
-docker-compose 'training one-off' do
+docker_compose 'training one-off' do
   action :run
   source 'training.yml'
 
