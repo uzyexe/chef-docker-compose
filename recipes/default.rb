@@ -25,5 +25,5 @@ bash "Install docker-compose" do
   mv /usr/local/bin/docker-compose-#{node['docker-compose']['version']} /usr/local/bin/docker-compose
   chmod +x /usr/local/bin/docker-compose
 EOH
-  not_if "docker-compose --version | grep -w 'docker-compose version: #{node['docker-compose']['version']}'"
+  not_if "docker-compose --version | grep -w 'docker-compose version' | grep -w '#{node['docker-compose']['version']}'"
 end
